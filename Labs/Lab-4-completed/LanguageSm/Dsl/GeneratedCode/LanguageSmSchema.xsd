@@ -1,0 +1,478 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xsd:schema id="LanguageSmSchema" targetNamespace="http://schemas.microsoft.com/dsltools/LanguageSm" elementFormDefault="qualified" xmlns="http://schemas.microsoft.com/dsltools/LanguageSm" xmlns:core="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:import id="CoreSchema" namespace="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" />
+  <!-- StateMachine -->
+  <xsd:element name="stateMachine" type="StateMachine" substitutionGroup="core:modelElement" />
+  <xsd:complexType name="StateMachine">
+    <xsd:annotation>
+      <xsd:documentation>The root in which all other elements are embedded. Appears as a diagram.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="core:ModelElement">
+        <xsd:sequence minOccurs="0" maxOccurs="1">
+          <!-- Relationship: StateMachineHasOneInitialState -->
+          <xsd:element name="initialState" minOccurs="1" maxOccurs="1">
+            <xsd:annotation>
+              <xsd:documentation>Instance of StateMachineHasOneInitialState</xsd:documentation>
+            </xsd:annotation>
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element ref="stateMachineHasOneInitialState" minOccurs="1" maxOccurs="1">
+                  <xsd:annotation>
+                    <xsd:documentation>[Instance of StateMachineHasOneInitialState needs to be serialized in full-form]</xsd:documentation>
+                  </xsd:annotation>
+                </xsd:element>
+              </xsd:sequence>
+            </xsd:complexType>
+          </xsd:element>
+          <!-- Relationship: StateMachineHasStates -->
+          <xsd:element name="states" minOccurs="0" maxOccurs="1">
+            <xsd:annotation>
+              <xsd:documentation>Instances of StateMachineHasStates</xsd:documentation>
+            </xsd:annotation>
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element ref="stateMachineHasStates" minOccurs="0" maxOccurs="unbounded">
+                  <xsd:annotation>
+                    <xsd:documentation>[Instance of StateMachineHasStates needs to be serialized in full-form]</xsd:documentation>
+                  </xsd:annotation>
+                </xsd:element>
+              </xsd:sequence>
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:sequence>
+        <!-- Id -->
+        <xsd:attribute name="Id" type="xsd:string">
+          <xsd:annotation>
+            <xsd:documentation>Instance Guid of this element, needed because SerializeId is set to true.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+        <!-- dslVersion -->
+        <xsd:attribute name="dslVersion" type="xsd:string">
+          <xsd:annotation>
+            <xsd:documentation>Version of the model serialized in this file.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+        <!-- Property: Name -->
+        <xsd:attribute name="name" type="xsd:string" />
+        <!-- Property: Comment -->
+        <xsd:attribute name="comment" type="xsd:string" />
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- StateMachine Moniker -->
+  <xsd:element name="stateMachineMoniker" type="StateMachineMoniker" substitutionGroup="core:modelElementMoniker" />
+  <xsd:complexType name="StateMachineMoniker">
+    <xsd:annotation>
+      <xsd:documentation>Moniker for StateMachine instance.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="core:ModelElementMoniker">
+        <xsd:attribute name="Id" type="xsd:string" >
+          <xsd:annotation>
+            <xsd:documentation>Attribute to store the moniker string.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- State -->
+  <xsd:element name="state" type="State" substitutionGroup="core:modelElement" />
+  <xsd:complexType name="State">
+    <xsd:annotation>
+      <xsd:documentation>Elements embedded in the model. Appear as boxes on the diagram.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="core:ModelElement">
+        <xsd:sequence minOccurs="0" maxOccurs="1">
+          <!-- Relationship: Transition -->
+          <xsd:element name="successors" minOccurs="0" maxOccurs="1">
+            <xsd:annotation>
+              <xsd:documentation>Instances of Transition</xsd:documentation>
+            </xsd:annotation>
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element ref="transition" minOccurs="0" maxOccurs="unbounded">
+                  <xsd:annotation>
+                    <xsd:documentation>[Instance of Transition needs to be serialized in full-form]</xsd:documentation>
+                  </xsd:annotation>
+                </xsd:element>
+              </xsd:sequence>
+            </xsd:complexType>
+          </xsd:element>
+          <!-- Relationship: StateHasEntryActioned -->
+          <xsd:element name="entryActioned" minOccurs="0" maxOccurs="1">
+            <xsd:annotation>
+              <xsd:documentation>Instances of StateHasEntryActioned</xsd:documentation>
+            </xsd:annotation>
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element ref="stateHasEntryActioned" minOccurs="0" maxOccurs="unbounded">
+                  <xsd:annotation>
+                    <xsd:documentation>[Instance of StateHasEntryActioned needs to be serialized in full-form]</xsd:documentation>
+                  </xsd:annotation>
+                </xsd:element>
+              </xsd:sequence>
+            </xsd:complexType>
+          </xsd:element>
+          <!-- Relationship: StateHasExitActioned -->
+          <xsd:element name="exitActioned" minOccurs="0" maxOccurs="1">
+            <xsd:annotation>
+              <xsd:documentation>Instances of StateHasExitActioned</xsd:documentation>
+            </xsd:annotation>
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element ref="stateHasExitActioned" minOccurs="0" maxOccurs="unbounded">
+                  <xsd:annotation>
+                    <xsd:documentation>[Instance of StateHasExitActioned needs to be serialized in full-form]</xsd:documentation>
+                  </xsd:annotation>
+                </xsd:element>
+              </xsd:sequence>
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:sequence>
+        <!-- Id -->
+        <xsd:attribute name="Id" type="xsd:string">
+          <xsd:annotation>
+            <xsd:documentation>Instance Guid of this element, needed because SerializeId is set to true.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+        <!-- Property: Name -->
+        <xsd:attribute name="name" type="xsd:string" use="required" />
+        <!-- Property: Kind -->
+        <xsd:attribute name="kind" type="StateKind" />
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- State Moniker -->
+  <xsd:element name="stateMoniker" type="StateMoniker" substitutionGroup="core:modelElementMoniker" />
+  <xsd:complexType name="StateMoniker">
+    <xsd:annotation>
+      <xsd:documentation>Moniker for State instance.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="core:ModelElementMoniker">
+        <xsd:attribute name="name" type="xsd:string" >
+          <xsd:annotation>
+            <xsd:documentation>Attribute to store the moniker string.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- Action -->
+  <xsd:element name="action" type="Action" substitutionGroup="core:modelElement" />
+  <xsd:complexType name="Action">
+    <xsd:complexContent>
+      <xsd:extension base="core:ModelElement">
+        <!-- Id -->
+        <xsd:attribute name="Id" type="xsd:string">
+          <xsd:annotation>
+            <xsd:documentation>Instance Guid of this element, needed because SerializeId is set to true.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+        <!-- Property: Label -->
+        <xsd:attribute name="label" type="xsd:string" />
+        <!-- Property: Code -->
+        <xsd:attribute name="code" type="xsd:string" />
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- Action Moniker -->
+  <xsd:element name="actionMoniker" type="ActionMoniker" substitutionGroup="core:modelElementMoniker" />
+  <xsd:complexType name="ActionMoniker">
+    <xsd:annotation>
+      <xsd:documentation>Moniker for Action instance.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="core:ModelElementMoniker">
+        <xsd:attribute name="Id" type="xsd:string" >
+          <xsd:annotation>
+            <xsd:documentation>Attribute to store the moniker string.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- EntryAction -->
+  <xsd:element name="entryAction" type="EntryAction" substitutionGroup="action" />
+  <xsd:complexType name="EntryAction">
+    <xsd:complexContent>
+      <xsd:extension base="Action">
+        <!-- Id -->
+        <xsd:attribute name="Id" type="xsd:string">
+          <xsd:annotation>
+            <xsd:documentation>Instance Guid of this element, needed because SerializeId is set to true.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- EntryAction Moniker -->
+  <xsd:element name="entryActionMoniker" type="EntryActionMoniker" substitutionGroup="actionMoniker" />
+  <xsd:complexType name="EntryActionMoniker">
+    <xsd:annotation>
+      <xsd:documentation>Moniker for EntryAction instance.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="ActionMoniker">
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- ExitAction -->
+  <xsd:element name="exitAction" type="ExitAction" substitutionGroup="action" />
+  <xsd:complexType name="ExitAction">
+    <xsd:complexContent>
+      <xsd:extension base="Action">
+        <!-- Id -->
+        <xsd:attribute name="Id" type="xsd:string">
+          <xsd:annotation>
+            <xsd:documentation>Instance Guid of this element, needed because SerializeId is set to true.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- ExitAction Moniker -->
+  <xsd:element name="exitActionMoniker" type="ExitActionMoniker" substitutionGroup="actionMoniker" />
+  <xsd:complexType name="ExitActionMoniker">
+    <xsd:annotation>
+      <xsd:documentation>Moniker for ExitAction instance.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="ActionMoniker">
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- Transition -->
+  <xsd:element name="transition" type="Transition" substitutionGroup="core:modelElement" />
+  <xsd:complexType name="Transition">
+    <xsd:annotation>
+      <xsd:documentation>Transition from one state to another</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="core:ModelElement">
+        <xsd:sequence minOccurs="0" maxOccurs="1">
+          <!-- Target end State -->
+          <xsd:element ref="stateMoniker" minOccurs="1" maxOccurs="1">
+            <xsd:annotation>
+              <xsd:documentation>[Target role-player]</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+        </xsd:sequence>
+        <!-- Id -->
+        <xsd:attribute name="Id" type="xsd:string">
+          <xsd:annotation>
+            <xsd:documentation>Instance Guid of this element, needed because SerializeId is set to true.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+        <!-- Property: Event -->
+        <xsd:attribute name="event" type="xsd:string" />
+        <!-- Property: Condition -->
+        <xsd:attribute name="condition" type="xsd:string" />
+        <!-- Property: Action -->
+        <xsd:attribute name="action" type="xsd:string" />
+        <!-- Property: Label -->
+        <xsd:attribute name="label" type="xsd:string" />
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- Transition Moniker -->
+  <xsd:element name="transitionMoniker" type="TransitionMoniker" substitutionGroup="core:modelElementMoniker" />
+  <xsd:complexType name="TransitionMoniker">
+    <xsd:annotation>
+      <xsd:documentation>Moniker for Transition instance.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="core:ModelElementMoniker">
+        <xsd:attribute name="Id" type="xsd:string" >
+          <xsd:annotation>
+            <xsd:documentation>Attribute to store the moniker string.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- StateHasEntryActioned -->
+  <xsd:element name="stateHasEntryActioned" type="StateHasEntryActioned" substitutionGroup="core:modelElement" />
+  <xsd:complexType name="StateHasEntryActioned">
+    <xsd:complexContent>
+      <xsd:extension base="core:ModelElement">
+        <xsd:sequence minOccurs="0" maxOccurs="1">
+          <!-- Target end EntryAction -->
+          <xsd:element ref="entryAction" minOccurs="1" maxOccurs="1">
+            <xsd:annotation>
+              <xsd:documentation>[Target role-player]</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+        </xsd:sequence>
+        <!-- Id -->
+        <xsd:attribute name="Id" type="xsd:string">
+          <xsd:annotation>
+            <xsd:documentation>Instance Guid of this element, needed because SerializeId is set to true.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- StateHasEntryActioned Moniker -->
+  <xsd:element name="stateHasEntryActionedMoniker" type="StateHasEntryActionedMoniker" substitutionGroup="core:modelElementMoniker" />
+  <xsd:complexType name="StateHasEntryActionedMoniker">
+    <xsd:annotation>
+      <xsd:documentation>Moniker for StateHasEntryActioned instance.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="core:ModelElementMoniker">
+        <xsd:attribute name="Id" type="xsd:string" >
+          <xsd:annotation>
+            <xsd:documentation>Attribute to store the moniker string.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- StateHasExitActioned -->
+  <xsd:element name="stateHasExitActioned" type="StateHasExitActioned" substitutionGroup="core:modelElement" />
+  <xsd:complexType name="StateHasExitActioned">
+    <xsd:complexContent>
+      <xsd:extension base="core:ModelElement">
+        <xsd:sequence minOccurs="0" maxOccurs="1">
+          <!-- Target end ExitAction -->
+          <xsd:element ref="exitAction" minOccurs="1" maxOccurs="1">
+            <xsd:annotation>
+              <xsd:documentation>[Target role-player]</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+        </xsd:sequence>
+        <!-- Id -->
+        <xsd:attribute name="Id" type="xsd:string">
+          <xsd:annotation>
+            <xsd:documentation>Instance Guid of this element, needed because SerializeId is set to true.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- StateHasExitActioned Moniker -->
+  <xsd:element name="stateHasExitActionedMoniker" type="StateHasExitActionedMoniker" substitutionGroup="core:modelElementMoniker" />
+  <xsd:complexType name="StateHasExitActionedMoniker">
+    <xsd:annotation>
+      <xsd:documentation>Moniker for StateHasExitActioned instance.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="core:ModelElementMoniker">
+        <xsd:attribute name="Id" type="xsd:string" >
+          <xsd:annotation>
+            <xsd:documentation>Attribute to store the moniker string.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- StateMachineHasOneInitialState -->
+  <xsd:element name="stateMachineHasOneInitialState" type="StateMachineHasOneInitialState" substitutionGroup="core:modelElement" />
+  <xsd:complexType name="StateMachineHasOneInitialState">
+    <xsd:complexContent>
+      <xsd:extension base="core:ModelElement">
+        <xsd:sequence minOccurs="0" maxOccurs="1">
+          <!-- Target end State -->
+          <xsd:element ref="stateMoniker" minOccurs="1" maxOccurs="1">
+            <xsd:annotation>
+              <xsd:documentation>[Target role-player]</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+        </xsd:sequence>
+        <!-- Id -->
+        <xsd:attribute name="Id" type="xsd:string">
+          <xsd:annotation>
+            <xsd:documentation>Instance Guid of this element, needed because SerializeId is set to true.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- StateMachineHasOneInitialState Moniker -->
+  <xsd:element name="stateMachineHasOneInitialStateMoniker" type="StateMachineHasOneInitialStateMoniker" substitutionGroup="core:modelElementMoniker" />
+  <xsd:complexType name="StateMachineHasOneInitialStateMoniker">
+    <xsd:annotation>
+      <xsd:documentation>Moniker for StateMachineHasOneInitialState instance.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="core:ModelElementMoniker">
+        <xsd:attribute name="Id" type="xsd:string" >
+          <xsd:annotation>
+            <xsd:documentation>Attribute to store the moniker string.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- StateMachineHasStates -->
+  <xsd:element name="stateMachineHasStates" type="StateMachineHasStates" substitutionGroup="core:modelElement" />
+  <xsd:complexType name="StateMachineHasStates">
+    <xsd:complexContent>
+      <xsd:extension base="core:ModelElement">
+        <xsd:sequence minOccurs="0" maxOccurs="1">
+          <!-- Target end State -->
+          <xsd:element ref="state" minOccurs="1" maxOccurs="1">
+            <xsd:annotation>
+              <xsd:documentation>[Target role-player]</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+        </xsd:sequence>
+        <!-- Id -->
+        <xsd:attribute name="Id" type="xsd:string">
+          <xsd:annotation>
+            <xsd:documentation>Instance Guid of this element, needed because SerializeId is set to true.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- StateMachineHasStates Moniker -->
+  <xsd:element name="stateMachineHasStatesMoniker" type="StateMachineHasStatesMoniker" substitutionGroup="core:modelElementMoniker" />
+  <xsd:complexType name="StateMachineHasStatesMoniker">
+    <xsd:annotation>
+      <xsd:documentation>Moniker for StateMachineHasStates instance.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="core:ModelElementMoniker">
+        <xsd:attribute name="Id" type="xsd:string" >
+          <xsd:annotation>
+            <xsd:documentation>Attribute to store the moniker string.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- Enum StateKind -->
+  <xsd:simpleType name="StateKind">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="Normal"/>
+      <xsd:enumeration value="Initial"/>
+      <xsd:enumeration value="Final"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  
+</xsd:schema>
+

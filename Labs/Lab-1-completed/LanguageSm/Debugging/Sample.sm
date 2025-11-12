@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<exampleModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="0fab674c-e72d-49ef-9f67-121d9195a7b3" xmlns="http://schemas.microsoft.com/dsltools/LanguageSm">
+  <elements>
+    <exampleElement Id="e614dda0-49f8-4788-9795-e33951a9f07e" name="Left">
+      <targets>
+        <exampleElementMoniker name="/0fab674c-e72d-49ef-9f67-121d9195a7b3/Center" />
+      </targets>
+    </exampleElement>
+    <exampleElement Id="89c19955-40be-429f-8d86-43d2ac7e171d" name="Center" />
+    <exampleElement Id="4f979b98-2f1b-4c6b-8258-c4949960d3cf" name="Right">
+      <targets>
+        <exampleElementMoniker name="/0fab674c-e72d-49ef-9f67-121d9195a7b3/Center" />
+      </targets>
+    </exampleElement>
+    <exampleElement Id="5b0b2895-0989-4992-a82c-6b25252386ca" name="Bottom">
+      <targets>
+        <exampleElementMoniker name="/0fab674c-e72d-49ef-9f67-121d9195a7b3/Center" />
+      </targets>
+    </exampleElement>
+    <exampleElement Id="dc513f57-9c36-4bbd-91e3-7e6b6974211b" name="Up">
+      <targets>
+        <exampleElementMoniker name="/0fab674c-e72d-49ef-9f67-121d9195a7b3/Center" />
+      </targets>
+    </exampleElement>
+  </elements>
+</exampleModel>

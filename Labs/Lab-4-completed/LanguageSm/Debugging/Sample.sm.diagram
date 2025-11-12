@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<languageSmDiagram dslVersion="1.0.0.0" Id="d8adc041-e13c-447e-b648-23b18650ca08" absoluteBounds="0, 0, 12, 8.5" name="Sample">
+  <stateMachineMoniker Id="93f06953-9367-4bf7-a531-0ab4660774fd" />
+  <nestedChildShapes>
+    <stateShape Id="b1810731-6d7d-4796-a00d-70d340a77ff3" absoluteBounds="0.5, 1.25, 2, 1.618779296875">
+      <stateMoniker name="/93f06953-9367-4bf7-a531-0ab4660774fd/WaitFirstPoint" />
+      <nestedChildShapes>
+        <elementListCompartment Id="2552b8bb-3618-4a3f-a3eb-e88710bbf4d7" absoluteBounds="0.5149999999999999, 2.26, 1.9700000000000002, 0.2493896484375" name="EntryActions" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="2da6b25a-f5ba-42a3-bd7e-8961e4ca6518" absoluteBounds="0.5149999999999999, 2.5193896484375, 1.9700000000000002, 0.2493896484375" name="ExitActions" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </stateShape>
+    <stateShape Id="68a40ccc-220b-40f6-856a-712dec584599" absoluteBounds="4.75, 1.125, 2.75, 2.0033821614583331">
+      <stateMoniker name="/93f06953-9367-4bf7-a531-0ab4660774fd/WaitSecondPoint" />
+      <nestedChildShapes>
+        <elementListCompartment Id="62e35d3f-5fb5-490a-881e-e0401b2eed34" absoluteBounds="4.765, 2.135, 2.7199999999999998, 0.44169108072916674" name="EntryActions" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="3dacacb2-915a-473b-a16f-64634334ed6b" absoluteBounds="4.765, 2.5866910807291665, 2.7199999999999998, 0.44169108072916674" name="ExitActions" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </stateShape>
+    <transitionConnector Id="c1182253-3832-407a-977f-7d8df7126692" edgePoints="[(2.5 : 2.0593896484375); (4.75 : 2.0593896484375)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <transitionMoniker Id="fb9cd2cd-a420-4713-90ce-c5f37ecd8156" />
+      <relativeChildShapes />
+      <nodes>
+        <stateShapeMoniker Id="b1810731-6d7d-4796-a00d-70d340a77ff3" />
+        <stateShapeMoniker Id="68a40ccc-220b-40f6-856a-712dec584599" />
+      </nodes>
+    </transitionConnector>
+    <stateShape Id="8feb78c5-e054-4627-a7e9-a805acd1a826" absoluteBounds="10, 1.25, 1.75, 1.618779296875">
+      <stateMoniker name="/93f06953-9367-4bf7-a531-0ab4660774fd/Terminated" />
+      <nestedChildShapes>
+        <elementListCompartment Id="afbf6bc8-6b19-4b3d-8019-50b8d557f161" absoluteBounds="10.015, 2.26, 1.7200000000000002, 0.2493896484375" name="EntryActions" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="fa0e5d36-b701-48e6-adbc-bf414947130e" absoluteBounds="10.015, 2.5193896484375, 1.7200000000000002, 0.2493896484375" name="ExitActions" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </stateShape>
+    <transitionConnector Id="a95d4226-6ce4-43ca-ad08-5b5fb9a19924" edgePoints="[(7.5 : 2.0593896484375); (10 : 2.0593896484375)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <transitionMoniker Id="f3fb0316-eb34-4f74-b915-25fca098c20f" />
+      <relativeChildShapes />
+      <nodes>
+        <stateShapeMoniker Id="68a40ccc-220b-40f6-856a-712dec584599" />
+        <stateShapeMoniker Id="8feb78c5-e054-4627-a7e9-a805acd1a826" />
+      </nodes>
+    </transitionConnector>
+    <transitionConnector Id="7c955eaf-9588-4144-9cb4-2b8830ab5a0c" edgePoints="[(5.71313155799279 : 3.12838216145833); (5.71313155799279 : 3.37838216145833); (6.55648122495994 : 3.37838216145833); (6.55648122495994 : 3.12838216145833)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <transitionMoniker Id="8cbcc079-92d1-4265-af95-7a3dbc4a9f1b" />
+      <relativeChildShapes />
+      <nodes>
+        <stateShapeMoniker Id="68a40ccc-220b-40f6-856a-712dec584599" />
+        <stateShapeMoniker Id="68a40ccc-220b-40f6-856a-712dec584599" />
+      </nodes>
+    </transitionConnector>
+  </nestedChildShapes>
+</languageSmDiagram>

@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<familyTreeModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="3a3872cc-1528-47f5-a098-edd2a52f7bd5" xmlns="http://schemas.microsoft.com/dsltools/FamilyTree">
+  <people>
+    <person Id="34777bdf-a100-4f41-b63c-31b7920b2322" name="Henry VII" birthYear="1491" deathYear="1547">
+      <children>
+        <personMoniker name="/3a3872cc-1528-47f5-a098-edd2a52f7bd5/Mary" />
+        <personMoniker name="/3a3872cc-1528-47f5-a098-edd2a52f7bd5/Elizabeth I" />
+      </children>
+    </person>
+    <person Id="41629174-d37f-4b85-97e7-187b388ff6b3" name="Mary" birthYear="1515" deathYear="1558" />
+    <person Id="57cfe5d7-188f-4d25-9427-2d1f8204c9d8" name="Elizabeth I" birthYear="1533" deathYear="1603" />
+  </people>
+</familyTreeModel>

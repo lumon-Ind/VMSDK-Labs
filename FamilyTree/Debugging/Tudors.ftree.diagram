@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<familyTreeDiagram dslVersion="1.0.0.0" Id="46ac5f77-3959-448f-8ed4-d305a7f35ead" absoluteBounds="0, 0, 11, 8.5" name="Test">
+  <familyTreeModelMoniker Id="a3acc9f6-6978-4512-9219-dcb08fc4760c" />
+  <nestedChildShapes>
+    <personShape Id="9f6d0921-8900-42b6-acaa-4c6fa9911fde" absoluteBounds="0.5, 0.5, 2, 0.75">
+      <personMoniker name="/a3acc9f6-6978-4512-9219-dcb08fc4760c/Henry VIII" />
+    </personShape>
+    <personShape Id="b286b950-ca5a-483f-b7ae-1eecdd0e303b" absoluteBounds="0.5, 1.75, 2, 0.75">
+      <personMoniker name="/a3acc9f6-6978-4512-9219-dcb08fc4760c/Mary I" />
+    </personShape>
+    <personShape Id="d98b07a7-ad60-4174-a825-b7b65bd622e4" absoluteBounds="5.125, 0.5, 2, 0.75">
+      <personMoniker name="/a3acc9f6-6978-4512-9219-dcb08fc4760c/Elizabeth I" />
+    </personShape>
+    <townShape Id="f5ce697f-ce7e-4f0f-8464-edaf7b8a4d31" absoluteBounds="5.125, 3.875, 1.5, 1">
+      <townMoniker Id="7f6d0d5e-1555-4b49-9065-a108aea9fb77" />
+    </townShape>
+    <residenceConnector Id="0d018ae0-b9ff-4e1e-bd9b-55fefce56944" edgePoints="[(6.20065799680566 : 3.875); (6.20065799680566 : 1.25)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <residenceMoniker Id="02747643-6d68-486d-8201-5ac08e29fe91" />
+      <nodes>
+        <townShapeMoniker Id="f5ce697f-ce7e-4f0f-8464-edaf7b8a4d31" />
+        <personShapeMoniker Id="d98b07a7-ad60-4174-a825-b7b65bd622e4" />
+      </nodes>
+    </residenceConnector>
+    <childConnector Id="4740a6aa-a375-43f7-8965-a750dd6af3d9" edgePoints="[(1.5 : 1.25); (1.5 : 1.75)]" fixedFrom="NotFixed" fixedTo="NotFixed" TargetRelationshipDomainClassId="81fc74ee-035b-4186-a143-3c71dce19917">
+      <nodes>
+        <personShapeMoniker Id="9f6d0921-8900-42b6-acaa-4c6fa9911fde" />
+        <personShapeMoniker Id="b286b950-ca5a-483f-b7ae-1eecdd0e303b" />
+      </nodes>
+    </childConnector>
+    <childConnector Id="57a0c9b1-c4e8-4d6e-a0d9-615238aacd46" edgePoints="[(2.5 : 0.875); (5.125 : 0.875)]" fixedFrom="NotFixed" fixedTo="NotFixed" TargetRelationshipDomainClassId="81fc74ee-035b-4186-a143-3c71dce19917">
+      <nodes>
+        <personShapeMoniker Id="9f6d0921-8900-42b6-acaa-4c6fa9911fde" />
+        <personShapeMoniker Id="d98b07a7-ad60-4174-a825-b7b65bd622e4" />
+      </nodes>
+    </childConnector>
+    <townShape Id="b24f8b05-78fe-4268-9072-e10b10fd55c8" absoluteBounds="3, 3.875, 1.5, 1">
+      <townMoniker Id="e395867b-4eff-465a-88a2-6641ed50dda1" />
+    </townShape>
+    <residenceConnector Id="3dec9c97-189f-474e-a926-3012d5364cc8" edgePoints="[(3.75 : 3.875); (3.75 : 1.0937525); (2.5 : 1.0937525)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <residenceMoniker Id="04bab300-7e5e-4e3f-8faa-8bcdbe652bd4" />
+      <nodes>
+        <townShapeMoniker Id="b24f8b05-78fe-4268-9072-e10b10fd55c8" />
+        <personShapeMoniker Id="9f6d0921-8900-42b6-acaa-4c6fa9911fde" />
+      </nodes>
+    </residenceConnector>
+    <townShape Id="4fb151fc-5a5b-4996-9d93-fe2c143f4691" absoluteBounds="0.625, 3.875, 1.5, 1">
+      <townMoniker Id="e51decdb-8cb1-4394-805e-b527a8cce970" />
+    </townShape>
+    <residenceConnector Id="f143b545-d80f-4a9b-9d1b-a7ac90dd85ea" edgePoints="[(1.375 : 3.875); (1.375 : 2.5)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <residenceMoniker Id="9d88f585-ea57-4a47-b503-05085eb07251" />
+      <nodes>
+        <townShapeMoniker Id="4fb151fc-5a5b-4996-9d93-fe2c143f4691" />
+        <personShapeMoniker Id="b286b950-ca5a-483f-b7ae-1eecdd0e303b" />
+      </nodes>
+    </residenceConnector>
+    <residenceConnector Id="6b0f9208-5521-46c4-a6c3-712840b44fbc" edgePoints="[(3.3437475 : 3.875); (3.3437475 : 2.125); (2.5 : 2.125)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <residenceMoniker Id="ae5a55b3-05a4-4a99-a61e-e958be7f2670" />
+      <nodes>
+        <townShapeMoniker Id="b24f8b05-78fe-4268-9072-e10b10fd55c8" />
+        <personShapeMoniker Id="b286b950-ca5a-483f-b7ae-1eecdd0e303b" />
+      </nodes>
+    </residenceConnector>
+    <residenceConnector Id="9b611889-866b-4c8a-ac2f-4ece4edebf9a" edgePoints="[(4.11538480649866 : 3.875); (4.11538480649866 : 1.625); (5.65131599361132 : 1.625); (5.65131599361132 : 1.25)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <residenceMoniker Id="0ef63826-9f32-4657-ad16-540bdd15329a" />
+      <nodes>
+        <townShapeMoniker Id="b24f8b05-78fe-4268-9072-e10b10fd55c8" />
+        <personShapeMoniker Id="d98b07a7-ad60-4174-a825-b7b65bd622e4" />
+      </nodes>
+    </residenceConnector>
+  </nestedChildShapes>
+</familyTreeDiagram>

@@ -1,0 +1,17 @@
+﻿<!--DSL Tools Language Template-->
+<VSTemplate Version="3.0.0" Type="Item" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<TemplateData>
+		<TemplateID>{be0ea8d3-61a4-4b25-b71b-ff5cc39407c1}</TemplateID>
+		<Name Package="{215edc66-3daf-4b36-ae2a-56ad2ca4a42c}" ID="103"/>
+		<Description Package="{215edc66-3daf-4b36-ae2a-56ad2ca4a42c}" ID="102"/>
+		<Icon Package="{215edc66-3daf-4b36-ae2a-56ad2ca4a42c}" ID="201" />
+		<ProjectType>VisualBasic</ProjectType>
+		<SortOrder>360</SortOrder>
+		<DefaultName>FamilyTree.ftree</DefaultName>
+	</TemplateData>
+	<TemplateContent>
+		<ProjectItem TargetFileName="$fileinputname$.ftree">ftree.ftree</ProjectItem>
+		<ProjectItem TargetFileName="$fileinputname$.ftree.diagram">ftree.diagram</ProjectItem>
+	</TemplateContent>
+</VSTemplate>
+

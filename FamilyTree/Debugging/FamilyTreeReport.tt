@@ -1,0 +1,30 @@
+﻿<#@ template inherits="Microsoft.VisualStudio.TextTemplating.VSHost.ModelingTextTransformation" #>
+<#@ output extension=".txt" #>
+<#@ FamilyTree processor="FamilyTreeDirectiveProcessor" requires="fileName='Tudors.ftree'" #>
+
+
+<#
+foreach (Person person in this.FamilyTreeModel.People)
+{
+#>
+<#= person.Name #> (<#= person.BirthYear #> - <#= person.DeathYear #>) 
+<#if (person.Residences != null) #> Residences:<#
+foreach(Town town in person.Residences) {#><#= town.Name #>,<#}
+#>
+<#if (person.Children.Count > 0)
+{#>
+
+ Children:
+<#
+foreach(Person child in person.Children)
+{
+#>
+	<#= child.Name #>
+<#
+}
+}
+#>
+
+<#
+}
+#>

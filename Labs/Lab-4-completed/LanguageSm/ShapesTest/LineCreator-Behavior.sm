@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<stateMachine xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="80a1e2b8-8bb8-4279-b47e-035ea9707b6c" name="LineCreator" comment="Creator for a line" xmlns="http://schemas.microsoft.com/dsltools/LanguageSm">
+  <initialState>
+    <stateMachineHasOneInitialState Id="6fa604df-2f47-43bd-ac7b-929beef95343">
+      <stateMoniker name="/80a1e2b8-8bb8-4279-b47e-035ea9707b6c/WaitFirstPoint" />
+    </stateMachineHasOneInitialState>
+  </initialState>
+  <states>
+    <stateMachineHasStates Id="e834b6e5-11fe-4c8b-8b9e-96d117c922dc">
+      <state Id="e4e4e6b0-812f-4f6b-ba74-a85ef4542aec" name="WaitFirstPoint" kind="Initial">
+        <successors>
+          <transition Id="1d2a5682-b4f2-44d0-a108-ffb59527a8d5" event="MouseDown(Point p)" action="P1 = P2 = p;" label="MouseDown(Point p) / P1 = P2 = p;">
+            <stateMoniker name="/80a1e2b8-8bb8-4279-b47e-035ea9707b6c/WaitSecondPoint" />
+          </transition>
+        </successors>
+      </state>
+    </stateMachineHasStates>
+    <stateMachineHasStates Id="d349e883-73a1-4646-be40-0b4145065a3b">
+      <state Id="3b63654c-9dbf-4726-8d3d-11b15bbf826a" name="WaitSecondPoint" kind="Normal">
+        <successors>
+          <transition Id="98d52a8b-6839-4b25-8a2b-21b128177785" event="MouseUp(Point p)" action="P2 = p;" label="MouseUp(Point p) / P2 = p;">
+            <stateMoniker name="/80a1e2b8-8bb8-4279-b47e-035ea9707b6c/Terminated" />
+          </transition>
+          <transition Id="c7b59cde-819c-4ec5-bd5f-77f5c5bba6be" event="MouseMove(Point p)" action="P2 = p;" label="MouseMove(Point p) / P2 = p;">
+            <stateMoniker name="/80a1e2b8-8bb8-4279-b47e-035ea9707b6c/WaitSecondPoint" />
+          </transition>
+          <transition Id="a36c56ee-5e64-409c-b797-eaf0428bdcf0" event="KeyDown(Key k)" condition="k == Key.C" action="Center = P1; P1 = SymmetricTo(P2);" label="KeyDown(Key k)  [ k == Key.C ] / Center = P1; P1 = SymmetricTo(P2);">
+            <stateMoniker name="/80a1e2b8-8bb8-4279-b47e-035ea9707b6c/WaitSecondPointWhenCentered" />
+          </transition>
+        </successors>
+      </state>
+    </stateMachineHasStates>
+    <stateMachineHasStates Id="4801314c-2ccb-4e2b-9f79-f6b086106cb1">
+      <state Id="fe633970-4067-447b-a5d9-50d3fced97eb" name="Terminated" kind="Final" />
+    </stateMachineHasStates>
+    <stateMachineHasStates Id="e0edf1b9-5f6e-4b86-9021-566fac8631ac">
+      <state Id="4c8f4aad-abc5-4bcc-9222-e7451f01cdc9" name="WaitSecondPointWhenCentered" kind="Normal">
+        <successors>
+          <transition Id="7dd2c5fe-b124-491c-885a-c74cdf9779b9" event="KeyUp(Key k)" condition="k == Key.C" action="P1 = Center;" label="KeyUp(Key k)  [ k == Key.C ] / P1 = Center;">
+            <stateMoniker name="/80a1e2b8-8bb8-4279-b47e-035ea9707b6c/WaitSecondPoint" />
+          </transition>
+          <transition Id="3314d8ca-dc69-49d5-a933-65b77573c0cc" event="MouseMove(Point p)" action="P2 = p; P1 = SymmetricTo(p);" label="MouseMove(Point p) / P2 = p; P1 = SymmetricTo(p);">
+            <stateMoniker name="/80a1e2b8-8bb8-4279-b47e-035ea9707b6c/WaitSecondPointWhenCentered" />
+          </transition>
+          <transition Id="7059573a-e6da-4ba2-9118-c9a4cf8691d1" event="MouseUp(Point p)" action="P2 = p;" label="MouseUp(Point p) / P2 = p;">
+            <stateMoniker name="/80a1e2b8-8bb8-4279-b47e-035ea9707b6c/Terminated" />
+          </transition>
+        </successors>
+      </state>
+    </stateMachineHasStates>
+  </states>
+</stateMachine>

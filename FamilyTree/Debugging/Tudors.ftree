@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<familyTreeModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="a3acc9f6-6978-4512-9219-dcb08fc4760c" xmlns="http://schemas.microsoft.com/dsltools/FamilyTree">
+  <people>
+    <person Id="4bb154a2-f859-4d56-b1e4-99e347ccffd2" name="Henry VIII" birthYear="1491" deathYear="1547">
+      <children>
+        <personMoniker name="/a3acc9f6-6978-4512-9219-dcb08fc4760c/Mary I" />
+        <personMoniker name="/a3acc9f6-6978-4512-9219-dcb08fc4760c/Elizabeth I" />
+      </children>
+    </person>
+    <person Id="0182c1b8-d853-43d5-a2b4-8b97cf37a0ef" name="Mary I" birthYear="1516" deathYear="1558" />
+    <person Id="5e3e8a09-6621-49cd-94c1-446f61b73ecd" name="Elizabeth I" birthYear="1533" deathYear="1603" />
+  </people>
+  <towns>
+    <familyTreeModelHasTowns Id="32a23cd9-b67d-473f-9787-ca43deec4961">
+      <town Id="7f6d0d5e-1555-4b49-9065-a108aea9fb77" name="Richmond">
+        <residents>
+          <residence Id="02747643-6d68-486d-8201-5ac08e29fe91">
+            <personMoniker name="/a3acc9f6-6978-4512-9219-dcb08fc4760c/Elizabeth I" />
+          </residence>
+        </residents>
+      </town>
+    </familyTreeModelHasTowns>
+    <familyTreeModelHasTowns Id="2e5be86c-ab6f-4bea-8480-9a1aeaaf5415">
+      <town Id="e395867b-4eff-465a-88a2-6641ed50dda1" name="London">
+        <residents>
+          <residence Id="04bab300-7e5e-4e3f-8faa-8bcdbe652bd4">
+            <personMoniker name="/a3acc9f6-6978-4512-9219-dcb08fc4760c/Henry VIII" />
+          </residence>
+          <residence Id="ae5a55b3-05a4-4a99-a61e-e958be7f2670">
+            <personMoniker name="/a3acc9f6-6978-4512-9219-dcb08fc4760c/Mary I" />
+          </residence>
+          <residence Id="0ef63826-9f32-4657-ad16-540bdd15329a">
+            <personMoniker name="/a3acc9f6-6978-4512-9219-dcb08fc4760c/Elizabeth I" />
+          </residence>
+        </residents>
+      </town>
+    </familyTreeModelHasTowns>
+    <familyTreeModelHasTowns Id="a7c57176-fe75-4c4b-8a0c-d9a3736346a6">
+      <town Id="e51decdb-8cb1-4394-805e-b527a8cce970" name="Westminster Abbey">
+        <residents>
+          <residence Id="9d88f585-ea57-4a47-b503-05085eb07251">
+            <personMoniker name="/a3acc9f6-6978-4512-9219-dcb08fc4760c/Mary I" />
+          </residence>
+        </residents>
+      </town>
+    </familyTreeModelHasTowns>
+  </towns>
+</familyTreeModel>

@@ -1,0 +1,201 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Company.LanguageSm.StateMachine" Collapsed="true">
+    <Position X="0.5" Y="2" Width="1.5" />
+    <AssociationLine Name="States" Type="Company.LanguageSm.State" FixedFromPoint="true">
+      <Path>
+        <Point X="2" Y="2.5" />
+        <Point X="3.25" Y="2.5" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AQAACAAAAAAAAAAAAQAAAAAAAAQAAAgAAAAABAAAAAA=</HashCode>
+      <FileName>GeneratedCode\DomainClasses.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="States" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="Company.LanguageSm.State">
+    <Position X="3.25" Y="2" Width="2" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <NestedTypes>
+      <Class Name="Company.LanguageSm.State.NamePropertyHandler" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>GeneratedCode\DomainClasses.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+      <Class Name="Company.LanguageSm.State.KindPropertyHandler" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>GeneratedCode\DomainClasses.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+    </NestedTypes>
+    <AssociationLine Name="Predecessors" Type="Company.LanguageSm.State" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="3.25" Y="3.353" />
+        <Point X="3" Y="3.353" />
+        <Point X="3" Y="3.776" />
+        <Point X="3.25" Y="3.776" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="Successors" Type="Company.LanguageSm.State" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="3.25" Y="2.702" />
+        <Point X="3" Y="2.702" />
+        <Point X="3" Y="3.057" />
+        <Point X="3.25" Y="3.057" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AQAAAIAAAABAAAAAAUIAAEQAEAQEAAkAQAAAAAAAAEA=</HashCode>
+      <FileName>GeneratedCode\DomainClasses.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Kind" />
+      <Property Name="StateMachine" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Property Name="Predecessors" />
+      <Property Name="Successors" />
+      <Property Name="EntryActioned" />
+      <Property Name="ExitActioned" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="Company.LanguageSm.Action">
+    <Position X="9.25" Y="2" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <NestedTypes>
+      <Class Name="Company.LanguageSm.Action.LabelPropertyHandler" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>GeneratedCode\DomainClasses.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+      <Class Name="Company.LanguageSm.Action.CodePropertyHandler" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>GeneratedCode\DomainClasses.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AQAAgAAAEAAAAAAAAAAgAAIAAAAAgAIAAAAAAAAAAAA=</HashCode>
+      <FileName>GeneratedCode\DomainClasses.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Company.LanguageSm.EntryAction" Collapsed="true">
+    <Position X="7" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>GeneratedCode\DomainClasses.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="State" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Company.LanguageSm.ExitAction" Collapsed="true">
+    <Position X="7" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>GeneratedCode\DomainClasses.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="State" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Company.LanguageSm.StateMachineHasStates">
+    <Position X="0.75" Y="5.75" Width="2" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AUAAAMAAAAiIAAAAAAAAAAAAAgCACAAAAAAABAAAgAA=</HashCode>
+      <FileName>GeneratedCode\DomainRelationships.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Company.LanguageSm.Transition">
+    <Position X="3" Y="5.75" Width="2" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <NestedTypes>
+      <Class Name="Company.LanguageSm.Transition.EventPropertyHandler" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>GeneratedCode\DomainRelationships.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+      <Class Name="Company.LanguageSm.Transition.ConditionPropertyHandler" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>GeneratedCode\DomainRelationships.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+      <Class Name="Company.LanguageSm.Transition.ActionPropertyHandler" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>GeneratedCode\DomainRelationships.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+      <Class Name="Company.LanguageSm.Transition.LabelPropertyHandler" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>GeneratedCode\DomainRelationships.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+    </NestedTypes>
+    <AssociationLine Name="Successor" Type="Company.LanguageSm.State" FixedFromPoint="true">
+      <Path>
+        <Point X="3.562" Y="5.75" />
+        <Point X="3.562" Y="4.011" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="Predecessor" Type="Company.LanguageSm.State" FixedFromPoint="true">
+      <Path>
+        <Point X="4.625" Y="5.75" />
+        <Point X="4.625" Y="4.011" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AUAEgAAEEASEAIAACAAIAEMgAhCAAEAAAAAAAAAFAAQ=</HashCode>
+      <FileName>GeneratedCode\DomainRelationships.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Successor" />
+      <Property Name="Predecessor" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Company.LanguageSm.StateHasEntryActioned">
+    <Position X="5.25" Y="5.75" Width="2" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>BUAABEAAEAAIAAAAAAAAAAAAAADAIABAAAAABAAAAAA=</HashCode>
+      <FileName>GeneratedCode\DomainRelationships.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Company.LanguageSm.StateHasExitActioned">
+    <Position X="7.5" Y="5.75" Width="1.75" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AUAABEAAAAAIAAAAAAAAAAAAAAGAAABAAAAABAECAAA=</HashCode>
+      <FileName>GeneratedCode\DomainRelationships.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Enum Name="Company.LanguageSm.StateKind" Collapsed="true">
+    <Position X="3.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAEAAAAAAAAAAAAQAAAAIAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>GeneratedCode\DomainModel.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

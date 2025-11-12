@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<familyTreeDiagram dslVersion="1.0.0.0" Id="da64a009-0bfe-4648-b36e-2f118b91d2ec" absoluteBounds="0, 0, 11, 8.5" name="Sample">
+  <familyTreeModelMoniker Id="3a3872cc-1528-47f5-a098-edd2a52f7bd5" />
+  <nestedChildShapes>
+    <personShape Id="71a8fe47-4173-4cbc-916d-5c3b7e5b2c08" absoluteBounds="0.5, 1.5, 2, 0.75">
+      <personMoniker name="/3a3872cc-1528-47f5-a098-edd2a52f7bd5/Henry VII" />
+    </personShape>
+    <personShape Id="a7c32850-c13d-482c-b0be-7b0ceae9f97e" absoluteBounds="0.5, 3, 2, 0.75">
+      <personMoniker name="/3a3872cc-1528-47f5-a098-edd2a52f7bd5/Mary" />
+    </personShape>
+    <personShape Id="5388db04-5018-4261-8dca-29f50cb56c83" absoluteBounds="3, 0.5, 2, 0.75">
+      <personMoniker name="/3a3872cc-1528-47f5-a098-edd2a52f7bd5/Elizabeth I" />
+    </personShape>
+    <childConnector Id="b40e7e3e-2e21-477f-91ac-008397e7b2b2" edgePoints="[(1.5 : 2.25); (1.5 : 3)]" fixedFrom="Algorithm" fixedTo="Algorithm" TargetRelationshipDomainClassId="81fc74ee-035b-4186-a143-3c71dce19917">
+      <nodes>
+        <personShapeMoniker Id="71a8fe47-4173-4cbc-916d-5c3b7e5b2c08" />
+        <personShapeMoniker Id="a7c32850-c13d-482c-b0be-7b0ceae9f97e" />
+      </nodes>
+    </childConnector>
+    <childConnector Id="2a326e79-4843-4ade-a333-8b4ded48ba18" edgePoints="[(1.5 : 1.5); (1.5 : 0.875); (3 : 0.875)]" fixedFrom="Algorithm" fixedTo="Algorithm" TargetRelationshipDomainClassId="81fc74ee-035b-4186-a143-3c71dce19917">
+      <nodes>
+        <personShapeMoniker Id="71a8fe47-4173-4cbc-916d-5c3b7e5b2c08" />
+        <personShapeMoniker Id="5388db04-5018-4261-8dca-29f50cb56c83" />
+      </nodes>
+    </childConnector>
+  </nestedChildShapes>
+</familyTreeDiagram>

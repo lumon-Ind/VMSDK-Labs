@@ -1,0 +1,8 @@
+﻿
+Generated material. Generating code in C#.
+
+	Left
+	Center
+	Right
+	Bottom
+	Up

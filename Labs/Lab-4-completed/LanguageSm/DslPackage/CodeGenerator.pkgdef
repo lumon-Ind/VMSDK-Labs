@@ -1,0 +1,15 @@
+﻿[$RootKey$\Generators] 
+[$RootKey$\Generators\{FAE04EC1-301F-11d3-BF4B-00C04F79EFBC}] 
+[$RootKey$\Generators\{FAE04EC1-301F-11d3-BF4B-00C04F79EFBC}\SmFileCodeGenerator] 
+@="Custom tool that generates C# files for state machines described in .sm files" 
+"CLSID"="{C69C8BA9-F37A-4DA7-A51E-1BD41F0016DE}" 
+"GeneratesDesignTimeSource"=dword:00000001 
+[$RootKey$\CLSID] 
+[$RootKey$\CLSID\{C69C8BA9-F37A-4DA7-A51E-1BD41F0016DE}] 
+@=" Custom tool that generates C# files for state machines described in .sm files " 
+"Class"="Company.LanguageSm.CodeGenerator" 
+"InprocServer32"="$WinDir$\SYSTEM32\MSCOREE.DLL" 
+"ThreadingModel"="Both" 
+"CodeBase"="$PackageFolder$\Company.LanguageSm.DslPackage.dll" 
+[$RootKey$\Generators\{FAE04EC1-301F-11d3-BF4B-00C04F79EFBC}\.sm] 
+@=" SmFileCodeGenerator "

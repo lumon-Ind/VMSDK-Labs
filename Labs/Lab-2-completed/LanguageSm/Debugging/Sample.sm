@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<stateMachine xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="207544f5-672f-450f-a6cd-f302bee9844c" xmlns="http://schemas.microsoft.com/dsltools/LanguageSm">
+  <states>
+    <state Id="eb03d4fb-08fb-4f1a-af68-5e967f5a46d9" name="Off" kind="Initial">
+      <successors>
+        <transition Id="3639e6ad-090f-4ec2-a265-674965cf65d0" label="Click [!OutOfOrder]">
+          <stateMoniker name="/207544f5-672f-450f-a6cd-f302bee9844c/On" />
+        </transition>
+      </successors>
+    </state>
+    <state Id="9b9c25f8-da9b-40e5-8c09-a692fcf29a66" name="On" kind="Normal">
+      <successors>
+        <transition Id="2861a299-46ee-4cbf-b773-826d5bbece22" label="Click">
+          <stateMoniker name="/207544f5-672f-450f-a6cd-f302bee9844c/Off" />
+        </transition>
+      </successors>
+      <entryActioned>
+        <stateHasEntryActioned Id="19ed4dfc-7d4b-4859-95b7-055b379ee049">
+          <entryAction Id="e86363ee-1f11-4a86-8382-cf5a72e143da" label="SwitchOn" code="driven.SwitchOn()" />
+        </stateHasEntryActioned>
+      </entryActioned>
+      <exitActioned>
+        <stateHasExitActioned Id="cedc58d4-1f72-4a11-a405-68416e6da95b">
+          <exitAction Id="ba4e9e59-8674-4053-a916-59d34d5c48fd" label="SwitchOff" code="driven.SwitchOff()" />
+        </stateHasExitActioned>
+      </exitActioned>
+    </state>
+  </states>
+</stateMachine>

@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<languageSmDiagram dslVersion="1.0.0.0" Id="dcca9dd7-1a05-4b50-abd8-ad7428fb33be" absoluteBounds="0, 0, 11, 8.5" name="Sample">
+  <exampleModelMoniker Id="0fab674c-e72d-49ef-9f67-121d9195a7b3" />
+  <nestedChildShapes>
+    <exampleShape Id="daf60a88-34f7-4127-b1b7-3359d7e249eb" absoluteBounds="0.75, 2.375, 2, 0.75">
+      <exampleElementMoniker name="/0fab674c-e72d-49ef-9f67-121d9195a7b3/Left" />
+    </exampleShape>
+    <exampleShape Id="484ab975-100d-4acf-8b7c-a76f04b7d22c" absoluteBounds="4.25, 2.25, 2.25, 1.25">
+      <exampleElementMoniker name="/0fab674c-e72d-49ef-9f67-121d9195a7b3/Center" />
+    </exampleShape>
+    <exampleConnector Id="7116826d-35aa-4e9a-b0cf-96a111eed69f" edgePoints="[(2.75 : 2.75); (4.25 : 2.75)]" fixedFrom="NotFixed" fixedTo="NotFixed" TargetRelationshipDomainClassId="07d93d21-a85a-401b-be31-d75bea95b093">
+      <nodes>
+        <exampleShapeMoniker Id="daf60a88-34f7-4127-b1b7-3359d7e249eb" />
+        <exampleShapeMoniker Id="484ab975-100d-4acf-8b7c-a76f04b7d22c" />
+      </nodes>
+    </exampleConnector>
+    <exampleShape Id="43f6eaf3-ba5c-4d8c-9520-f685c1101cdf" absoluteBounds="8.25, 2.5, 2, 0.75">
+      <exampleElementMoniker name="/0fab674c-e72d-49ef-9f67-121d9195a7b3/Right" />
+    </exampleShape>
+    <exampleShape Id="9e492bc2-8775-4b7f-a805-c1c85c2f58b3" absoluteBounds="4.375, 4.5, 2, 0.75">
+      <exampleElementMoniker name="/0fab674c-e72d-49ef-9f67-121d9195a7b3/Bottom" />
+    </exampleShape>
+    <exampleShape Id="1fd5c3d8-cb1c-4247-a8d0-0a84952c3431" absoluteBounds="4.375, 0.5, 2, 0.75">
+      <exampleElementMoniker name="/0fab674c-e72d-49ef-9f67-121d9195a7b3/Up" />
+    </exampleShape>
+    <exampleConnector Id="6da77441-1daf-4961-b196-f454fe29334d" edgePoints="[(5.375 : 1.25); (5.375 : 2.25)]" fixedFrom="NotFixed" fixedTo="NotFixed" TargetRelationshipDomainClassId="07d93d21-a85a-401b-be31-d75bea95b093">
+      <nodes>
+        <exampleShapeMoniker Id="1fd5c3d8-cb1c-4247-a8d0-0a84952c3431" />
+        <exampleShapeMoniker Id="484ab975-100d-4acf-8b7c-a76f04b7d22c" />
+      </nodes>
+    </exampleConnector>
+    <exampleConnector Id="2f1d59a4-4c52-4e42-9391-60cae3723bb9" edgePoints="[(8.25 : 2.875); (6.5 : 2.875)]" fixedFrom="Algorithm" fixedTo="Algorithm" TargetRelationshipDomainClassId="07d93d21-a85a-401b-be31-d75bea95b093">
+      <nodes>
+        <exampleShapeMoniker Id="43f6eaf3-ba5c-4d8c-9520-f685c1101cdf" />
+        <exampleShapeMoniker Id="484ab975-100d-4acf-8b7c-a76f04b7d22c" />
+      </nodes>
+    </exampleConnector>
+    <exampleConnector Id="ca0922c7-6df3-4b89-8bad-b87bb9e23e79" edgePoints="[(5.375 : 4.5); (5.375 : 3.5)]" fixedFrom="Algorithm" fixedTo="Algorithm" TargetRelationshipDomainClassId="07d93d21-a85a-401b-be31-d75bea95b093">
+      <nodes>
+        <exampleShapeMoniker Id="9e492bc2-8775-4b7f-a805-c1c85c2f58b3" />
+        <exampleShapeMoniker Id="484ab975-100d-4acf-8b7c-a76f04b7d22c" />
+      </nodes>
+    </exampleConnector>
+  </nestedChildShapes>
+</languageSmDiagram>

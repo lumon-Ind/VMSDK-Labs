@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Company.LanguageSm.ExampleModel">
+    <Position X="8.25" Y="0.5" Width="2.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AQAACAAAAAAAAAAAAQAQAAAAAAQAAAgAAAAAAAAAAAA=</HashCode>
+      <FileName>GeneratedCode\DomainClasses.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="Elements" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="Company.LanguageSm.ExampleElement">
+    <Position X="1" Y="0.5" Width="4.25" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <NestedTypes>
+      <Class Name="Company.LanguageSm.ExampleElement.NamePropertyHandler" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>GeneratedCode\DomainClasses.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AQAAAAAAAAAAAAAAAEAAAAQAAAAwAEEAAAAAAAAAAAA=</HashCode>
+      <FileName>GeneratedCode\DomainClasses.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="Targets" />
+      <Property Name="Sources" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="Company.LanguageSm.ExampleModelHasElements">
+    <Position X="7.75" Y="3.5" Width="3.5" />
+    <AssociationLine Name="Element" Type="Company.LanguageSm.ExampleElement" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="7.75" Y="3.644" />
+        <Point X="7.375" Y="3.644" />
+        <Point X="7.375" Y="2.5" />
+        <Point X="5.25" Y="2.5" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AUAAAAIAIAAAAAAAAAgAAAIAgAChAAABAAAAIAAAAAA=</HashCode>
+      <FileName>GeneratedCode\DomainRelationships.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="ExampleModel" />
+      <Property Name="Element" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Company.LanguageSm.ExampleElementReferencesTargets">
+    <Position X="1.25" Y="3.75" Width="3.75" />
+    <TypeIdentifier>
+      <HashCode>BUAAAAAAAgAAFAAAAAAAACACACCAAAQAAAAAAAAAAAA=</HashCode>
+      <FileName>GeneratedCode\DomainRelationships.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Source" />
+      <Property Name="Target" />
+    </ShowAsAssociation>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

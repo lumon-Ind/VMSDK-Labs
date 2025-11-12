@@ -1,0 +1,200 @@
+﻿<#@ template inherits="Microsoft.VisualStudio.TextTemplating.VSHost.ModelingTextTransformation"#> 
+<#@ output extension=".sm.cs" #> 
+<#@ LanguageSm processor="LanguageSmDirectiveProcessor" requires="fileName='LineCreator-Behavior.sm'" #>
+<#@ Assembly Name="System.Core.dll" #>
+<#@ Import Namespace="System.Collections.Generic" #>
+<#@ Import Namespace="System.Linq" #>
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+using System.Windows;
+using System.Windows.Input;
+
+namespace ShapesTest
+{
+    /// <summary> 
+    /// <#= StateMachine.Comment #> 
+    /// </summary>
+    partial class  <#= StateMachine.Name #> : Tool
+    {
+        // States of the tool 
+        enum States 
+        { 
+        <# GenerateStateLiterals(); #>   
+        }
+
+
+        /// <summary>current state</summary> 
+        States state = States.<#= StateMachine.InitialState.Name #>; 
+ 
+        <# 
+          foreach (IGrouping<string, Transition> transitionsForName in GetAllTransitionsByName()) 
+          { 
+        #> 
+          /// <summary>Transition</summary> 
+          protected internal override void <#=transitionsForName.Key#> 
+          { 
+           switch(state) 
+           { 
+                <#   GenerateCases(transitionsForName); #> 
+           } 
+          } 
+        <#    
+          } // foreach 
+        #> 
+         } 
+        }
+
+ <#+ 
+    void GenerateStateLiterals_wo_Final() 
+    { 
+       // Build the list of literals 
+       List<string> literals = new List<string>(); 
+       foreach (State state in StateMachine.States) 
+               if (state.Kind != StateKind.Final) 
+                    literals.Add(state.Name); 
+ 
+       // Generate it 
+       PushIndent("   "); 
+       Write(string.Join(",\r\n", literals.ToArray())); 
+       PopIndent(); 
+    } 
+
+    void GenerateStateLiterals() 
+    { 
+     // Build the list of literals 
+     List<string> literals = new List<string>(); 
+     foreach (State state in StateMachine.States) 
+      literals.Add(state.Name); 
+ 
+     // Generate it 
+     PushIndent("   "); 
+     Write(string.Join(",\r\n", literals.ToArray())); 
+     PopIndent(); 
+    } 
+ 
+    /// <summary>Get all the transitions in the state machine</summary> 
+    IEnumerable<Transition> GetAllTransitions() 
+    { 
+     foreach (State s in StateMachine.States) 
+      foreach (Transition t in Transition.GetLinksToSuccessors(s)) 
+       yield return t; 
+    } 
+ 
+ 
+    /// <summary> 
+    /// Get all the transitions grouped by name 
+    /// </summary> 
+    IEnumerable<IGrouping<string, Transition>> GetAllTransitionsByName() 
+    { 
+        return from Transition t in GetAllTransitions() group t by t.Event; 
+    } 
+ 
+    /// <summary> 
+    /// For each transition name, get the states initiating a transition  
+    /// of this name, and the transitions of this name inited from this 
+    /// states. 
+    /// </summary> 
+    /// <returns></returns> 
+    IEnumerable<IGrouping<State, Transition>>  GetTransitionsGroupedByPredecessor(IEnumerable<Transition> transitions) 
+    { 
+        return from Transition t in transitions orderby t.Condition descending group t by t.Predecessor; 
+    }      
+#>
+
+
+<#+ 
+ 
+  /// <summary> 
+  /// Generates the body of the switch statement of the methods  
+  /// implementing the Transitions 
+  /// </summary> 
+  void GenerateCases(IEnumerable<Transition> transitions) 
+  { 
+   foreach (IGrouping<State, Transition> transitionsFromState in  
+                  GetTransitionsGroupedByPredecessor(transitions)) 
+   { 
+#> 
+    case States.<#= transitionsFromState.Key.Name #>: 
+<#+ 
+   GenerateCaseBody(transitionsFromState); 
+#> 
+    break; 
+     
+<#+ 
+   } 
+  } 
+#>
+
+<#+
+    /// <summary> 
+ /// Generate the body of the Case 
+ /// </summary> 
+ /// <param name="transitions"></param> 
+void GenerateCaseBody(IEnumerable<Transition> transitions) 
+{ 
+ PushIndent("     "); 
+  
+ // Did we already meet a condition? 
+ bool already = false; 
+  
+ // Iterate thu all the transitions (which, we know, have the same  
+ // name, and are ordered by Condition in the descending order:  
+ // the empty condition should be last 
+ foreach(Transition t in transitions) 
+ { 
+  // If we already met a condition, then, we should add a else  
+  // before a if statement 
+  if (already) 
+   Write("else "); 
+   
+  // Empty conditions just produce the else. Non empty produce an  
+  // if statement 
+  if (!string.IsNullOrEmpty(t.Condition)) 
+  { 
+   WriteLine("if ("+t.Condition+")"); 
+   already = true; 
+  } 
+  else if (already) 
+   WriteLine(""); 
+   
+  // Beginning of block 
+  if (already) 
+  { 
+   WriteLine("{"); 
+   PushIndent(" "); 
+  } 
+   
+  // Exit actions of the predecessor state 
+  foreach (Company.LanguageSm.Action previous in t.Predecessor.ExitActioned) 
+   WriteLine(previous.Code); 
+ 
+  // Action on the transition 
+  if (!string.IsNullOrEmpty(t.Action)) 
+   WriteLine(t.Action); 
+ 
+  // Transition state (or Terminate() for final state) 
+  if (t.Successor.Kind == StateKind.Final) 
+   WriteLine("Terminate();"); 
+  else if (t.Predecessor != t.Successor) 
+   WriteLine("state = States." + t.Successor.Name+";"); 
+ 
+  // Entry actions of the successor state 
+ foreach (Company.LanguageSm.Action next in t.Successor.EntryActioned) 
+   WriteLine(next.Code); 
+   
+  // Close the block 
+  if (already) 
+  { 
+   PopIndent(); 
+   WriteLine("}"); 
+  } 
+ 
+  } 
+  PopIndent(); 
+ }
+#>

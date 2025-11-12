@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<stateMachine xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="93f06953-9367-4bf7-a531-0ab4660774fd" xmlns="http://schemas.microsoft.com/dsltools/LanguageSm">
+  <initialState>
+    <stateMachineHasOneInitialState Id="2abfe601-e0d7-4515-8238-5bbcf00d0ff5">
+      <stateMoniker name="/93f06953-9367-4bf7-a531-0ab4660774fd/WaitFirstPoint" />
+    </stateMachineHasOneInitialState>
+  </initialState>
+  <states>
+    <stateMachineHasStates Id="012340af-2d4e-4778-8fb3-fc00a8f6502d">
+      <state Id="4b096a63-d9f2-4bd8-9c36-388efc226505" name="WaitFirstPoint" kind="Initial">
+        <successors>
+          <transition Id="fb9cd2cd-a420-4713-90ce-c5f37ecd8156" event="MouseUp(Point p)" action="P1 = P2 = p;" label="MouseUp(Point p) / P1 = P2 = p;">
+            <stateMoniker name="/93f06953-9367-4bf7-a531-0ab4660774fd/WaitSecondPoint" />
+          </transition>
+        </successors>
+      </state>
+    </stateMachineHasStates>
+    <stateMachineHasStates Id="606451fa-7c15-4c19-9713-8cc82013492d">
+      <state Id="0ac6b99d-e153-443c-bb56-521a74616673" name="WaitSecondPoint" kind="Normal">
+        <successors>
+          <transition Id="f3fb0316-eb34-4f74-b915-25fca098c20f" event="MouseUp(Point p)" action="P2=p;" label="MouseUp(Point p) / P2=p;">
+            <stateMoniker name="/93f06953-9367-4bf7-a531-0ab4660774fd/Terminated" />
+          </transition>
+          <transition Id="8cbcc079-92d1-4265-af95-7a3dbc4a9f1b" event="MouseMove(Point p)" action="P2 = p;" label="MouseMove(Point p) / P2 = p;">
+            <stateMoniker name="/93f06953-9367-4bf7-a531-0ab4660774fd/WaitSecondPoint" />
+          </transition>
+        </successors>
+        <entryActioned>
+          <stateHasEntryActioned Id="afcb7ad8-c0fd-4a4d-845f-b8ea61c93a57">
+            <entryAction Id="1dfd72f1-e8ea-469f-a70c-64cef2b61b20" label="SwitchOn" code="driven.SwitchOn();" />
+          </stateHasEntryActioned>
+        </entryActioned>
+        <exitActioned>
+          <stateHasExitActioned Id="8bdd6b46-7bd1-4b41-9337-761e6a0f77d2">
+            <exitAction Id="97449318-3e83-4f23-9de4-ea518bce9cad" label="SwitchOff" code="driven.SwitchOff();" />
+          </stateHasExitActioned>
+        </exitActioned>
+      </state>
+    </stateMachineHasStates>
+    <stateMachineHasStates Id="9876f91f-1c3a-42b4-822f-92ca664cc6b5">
+      <state Id="841ba380-e472-4d56-9bb8-360bb54cde19" name="Terminated" kind="Final" />
+    </stateMachineHasStates>
+  </states>
+</stateMachine>

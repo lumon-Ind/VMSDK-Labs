@@ -1,0 +1,17 @@
+﻿<!--DSL Tools Language Template-->
+<VSTemplate Version="3.0.0" Type="Item" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<TemplateData>
+		<TemplateID>{d6088b41-fc16-47d3-9f30-c56a904b2a81}</TemplateID>
+		<Name Package="{6a50683e-071f-4949-99ac-ca49182e8818}" ID="103"/>
+		<Description Package="{6a50683e-071f-4949-99ac-ca49182e8818}" ID="102"/>
+		<Icon Package="{6a50683e-071f-4949-99ac-ca49182e8818}" ID="201" />
+		<ProjectType>VisualBasic</ProjectType>
+		<SortOrder>360</SortOrder>
+		<DefaultName>LanguageSm.sm</DefaultName>
+	</TemplateData>
+	<TemplateContent>
+		<ProjectItem TargetFileName="$fileinputname$.sm">sm.sm</ProjectItem>
+		<ProjectItem TargetFileName="$fileinputname$.sm.diagram">sm.diagram</ProjectItem>
+	</TemplateContent>
+</VSTemplate>
+
