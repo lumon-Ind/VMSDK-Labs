@@ -712,7 +712,7 @@ partial class  LineCreator : Tool
 
 #### Improving the readability of the template
 
-This is why we suggest instead that you use the members of a _TextTransformation_ basic class from our T4 transformation. You see, when you write a T4 template, you are actually writing a class that derives (indirectly) from _Microsoft.VisualStudio.TextModeling.TextTransformation_ and modifies the _TransformText()_ method so that its return string is built from the content of our .tt file. More details here - https://learn.microsoft.com/en-us/dotnet/api/microsoft.visualstudio.texttemplating.texttransformation?view=visualstudiosdk-2022. This is the magic of T4!
+This is why we suggest instead that you use the members of a _TextTransformation_ basic class from our T4 transformation. You see, when you write a T4 template, you are actually writing a class that derives (indirectly) from _Microsoft.VisualStudio.TextModeling.TextTransformation_ and modifies the _TransformText()_ method so that its return string is built from the content of our .tt file. More details [here](https://learn.microsoft.com/en-us/dotnet/api/microsoft.visualstudio.texttemplating.texttransformation?view=visualstudiosdk-2022). This is the magic of T4!
 
 Some of the more interesting members are:
 
