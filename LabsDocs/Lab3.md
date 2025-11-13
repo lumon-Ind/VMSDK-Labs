@@ -4,7 +4,7 @@ Visual Studio Modeling SDK
 
 ## Preface
 
-In the previous parts, we showed how to create a DSL by using the DSL Tools wizard (part 1), and then modify it to create our own metamodel and graphical notation (part 2) for a finite-state machine. At the end of chapter 2, the user interface (UI) still remains to be improved. In addition, a good DSL must validate the model entered by the user « just in time ». These are the two improvements that we are going to deal with in this third part.
+In the previous parts, we showed how to create a DSL by using the VMSDK wizard (part 1), and then modify it to create our own metamodel and graphical notation (part 2) for a finite-state machine. At the end of chapter 2, the user interface (UI) still remains to be improved. In addition, a good DSL must validate the model entered by the user « just in time ». These are the two improvements that we are going to deal with in this third part.
 
 ## Improving the UI of the DSL
 
@@ -86,9 +86,9 @@ The toolbox does in fact contain a **“State Machines”** tab.
 ## Keeping your model consistent
 
 We have, up until now, improved the user experience in terms of the visual aspect. We will now add constraints and validations.
-The DSL Tools, as we have seen, generate the metamodel and the designer for us without us having to write the slightest bit of code, and we can go quite far this way.
+The VMSDK wizard, as we have seen, generate the metamodel and the designer for us without us having to write the slightest bit of code, and we can go quite far this way.
 
-From now on, we are going to tackle the advanced aspects of the DSL Tools, by writing personalized code:
+From now on, we are going to tackle the advanced aspects of the VMSDK, by writing personalized code:
 
 - For the **constraints** of the model.
 - For **validation** of the model.
@@ -354,14 +354,14 @@ During the first step of this Lab, we saw that the concepts of the model could b
 
 6. If the DSL Details window is not visible, display it, (by using the command **View / Other Windows / DSL Details**).
 
-7. In the “DSL Details” window, click the **check box Custom accept** in connection with the **Domain Class** *State* in the **Source role directives** tab for the **Relationship** *Transition*. You have just asked the DSL Tools to let you decide whether a State can be the source of a Transition.
+7. In the “DSL Details” window, click the **check box Custom accept** in connection with the **Domain Class** *State* in the **Source role directives** tab for the **Relationship** *Transition*. You have just asked the VMSDK to let you decide whether a State can be the source of a Transition.
 
 ![image](./images/Lab3/tran_cust_accept.png)
 
 8. Click the **Build / Transform All T4 Templates** command to regenerate the code.
 
 9. Ask your DSL to recompile by using **Build / Build Solution**. You will have compilation errors, which is expected !
-10. Double-click the first error in the Error List, and notice that the DSL Tools have left you a message between comments. The message tells you that you must add the method *bool CanAcceptStateAsSource(State candidate)* into the Custom Code yourself, and that this method should be *private static*.
+10. Double-click the first error in the Error List, and notice that the VMSDK have left you a message between comments. The message tells you that you must add the method *bool CanAcceptStateAsSource(State candidate)* into the Custom Code yourself, and that this method should be *private static*.
 
 ![image](./images/Lab3/tran_builder_error.png)
 
@@ -403,7 +403,7 @@ namespace Company.LanguageSm
 
 When you try to create a transition from a state whose Kind is Final, the pointer changes to show that this is prohibited. It works!
 
-Notice, however, that you might have to change the property *AllowDuplicates* to true in *Transition* in order to do all the tests you want because, by default, it is false, and therefore, the DSL tools ensure a strong constraint on relationship, which is only one Transition between 2 states.
+Notice, however, that you might have to change the property *AllowDuplicates* to true in *Transition* in order to do all the tests you want because, by default, it is false, and therefore, the VMSDK ensure a strong constraint on relationship, which is only one Transition between 2 states.
 
 ## Applying Hard Constraints
 

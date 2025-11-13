@@ -2,7 +2,7 @@
 
 Visual Studio Modeling SDK
 
-In the previous parts we showed you how to create a DSL by using the DSL Tools wizard (part 1), then we modified it to create our own metamodel and graphical syntax (part 2) for a final-state automaton. We then improved it (part 3), first by personalizing the UI, then by adding validation rules and validation of the model. Then (part 4), we generated the code that corresponds to our model, and created a custom tool.
+In the previous parts we showed you how to create a DSL by using the VMSDK wizard (part 1), then we modified it to create our own metamodel and graphical syntax (part 2) for a final-state automaton. We then improved it (part 3), first by personalizing the UI, then by adding validation rules and validation of the model. Then (part 4), we generated the code that corresponds to our model, and created a custom tool.
 
 We will finish this Lab by installing the DSL on any computer that has a copy of Visual Studio.
 
