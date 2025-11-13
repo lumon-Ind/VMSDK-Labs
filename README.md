@@ -1,4 +1,4 @@
-﻿# VMSDK
+﻿# VMSDK DSL Labs
 Microsoft Visual Studio - Visualization and Modeling SDK
 
 The term **VMSDK** used instead legacy *DSL Tools*
